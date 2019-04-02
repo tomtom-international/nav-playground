@@ -16,4 +16,4 @@ resources:
 jobs:
   - template: jobs/python.setup.py.yml@templates
     parameters:
-      pypiConnector: "pypi-tomtom"
+      pypiConnector: "testpypi-tomtom-dev"
