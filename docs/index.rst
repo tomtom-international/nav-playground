@@ -1,14 +1,14 @@
-Welcome to nav-playground's documentation!
-======================================
+nav-playground documentation
+============================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   readme
+   Readme <readme>
    installation
    usage
-   modules
+   Modules <modules>
    contributing
    authors
    history

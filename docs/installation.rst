@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/tomtom-international/nav_playground
+    $ git clone git@github.com:tomtom-international/nav-playground.git
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl  -OL https://github.com/tomtom-international/nav_playground/tarball/master
+    $ curl  -OL https://github.com/tomtom-international/nav-playground/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/tomtom-international/nav_playground
-.. _tarball: https://github.com/tomtom-international/nav_playground/tarball/master
+.. _Github repo: https://github.com/tomtom-international/nav-playground
+.. _tarball: https://github.com/tomtom-international/nav-playground/tarball/master
