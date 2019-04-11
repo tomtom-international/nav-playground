@@ -18,6 +18,8 @@ class TestFileNormFuzzing:
             min_size=1, alphabet=strat.characters(blacklist_categories=("C"))
         )
     )
+    @example(file_path=" ")
+    @example(file_path="//")
     def test_different_file_path(self, file_path):
         """
         Tests that secret keys, whitespace in paths, and hidden files are all handled correctly
