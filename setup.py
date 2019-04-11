@@ -21,9 +21,10 @@ with open("CHANGELOG.md") as changelog_file:
 
 requirements = []
 
-setup_requirements = ["pytest-runner",]
+setup_requirements = ["pytest-runner"]
 
-test_requirements = ["pytest", "pytest-cov", "coverage",]
+test_requirements = ["pytest", "pytest-cov", "coverage", "hypothesis"]
+
 
 setup(
     author=nav_playground.__author__,
@@ -39,11 +40,7 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     description="Just a playground to test various things out",
-    entry_points={
-        "console_scripts": [
-            "nav-playground=nav_playground.cli:main",
-        ],
-    },
+    entry_points={"console_scripts": ["nav-playground=nav_playground.cli:main"]},
     install_requires=requirements,
     license="Apache Software License 2.0",
     long_description=readme + "\n\n" + changelog,
