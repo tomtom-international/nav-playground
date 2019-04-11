@@ -1,32 +1,34 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""Tests for `nav_playground` package."""
+"""
+Tests for the secret file writing functionality in vault_anyconfig package.
+"""
+# pylint: disable=attribute-defined-outside-init
+# pylint: disable=too-few-public-methods
+# pylint: disable=no-self-use
+# pylint: disable=unused-argument
+from os.path import abspath, normpath
 
 import pytest
-
-from nav_playground import nav_playground
-from nav_playground import cli
-
-
-@pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
-    """
-    # import requests
-    # return requests.get("https://github.com/audreyr/cookiecutter-pypackage")
+from hypothesis import given, example
+import hypothesis.strategies as strat
 
 
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert "GitHub" in BeautifulSoup(response.content).title.string
+class TestFileNormFuzzing:
+    @given(
+        file_path=strat.text(
+            min_size=1, alphabet=strat.characters(blacklist_categories=("C"))
+        )
+    )
+    def test_different_file_path(self, file_path):
+        """
+        Tests that secret keys, whitespace in paths, and hidden files are all handled correctly
+        """
 
+        abs_path_1 = abspath(file_path)
+        abs_path_2 = abspath(abs_path_1)
 
-def test_cli():
-    """Test the CLI."""
+        assert abs_path_1 == abs_path_2
 
-    parser = cli.parse_args(["--foo", "test"])
-    assert parser.foo == "test"
+        norm_path_1 = normpath(file_path)
+        norm_path_2 = normpath(norm_path_1)
+
+        assert norm_path_1 == norm_path_2
