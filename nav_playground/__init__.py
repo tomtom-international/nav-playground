@@ -5,4 +5,4 @@
 __project__ = "nav-playground"
 __author__ = "Martin Migasiewicz"
 __email__ = "migasiew.nk@gmail.com"
-__version__ = "0.0.7-dev"
+__version__ = "0.0.7"
